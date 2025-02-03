@@ -1,0 +1,117 @@
+"use client"
+
+import { useEffect, useState } from "react"
+import { motion } from "framer-motion"
+import { Calendar } from "lucide-react"
+import Link from "next/link"
+import PocketBase from "pocketbase"
+import { Card, CardContent } from "@/components/ui/card"
+
+// Initialize PocketBase
+const pb = new PocketBase("https://wcler.pockethost.io")
+
+export function Dates() {
+  const [timelineData, setTimelineData] = useState([])
+
+  useEffect(() => {
+    async function fetchTimelineData() {
+      try {
+        const records = await pb.collection("dates").getFullList({
+          sort: "created",
+          requestKey: null,
+        })
+
+        const formattedData = records
+          .map((record) => ({
+            date: record.date,
+            title: record.title,
+          }))
+          .reverse()
+
+        setTimelineData(formattedData)
+      } catch (error) {
+        console.error("Error fetching timeline data:", error)
+      }
+    }
+
+    fetchTimelineData()
+  }, [])
+
+  return (
+    <div className="min-h-full  py-16 px-4">
+      <div className="max-w-7xl mx-auto">
+        <motion.h1
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <span className="text-4xl md:text-5xl font-medium   drop-shadow-sm">
+            Important Dates
+          </span>
+        </motion.h1>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {timelineData.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -5, transition: { duration: 0.2 } }}
+              className="group"
+            >
+              <Card className=" bg-white h-72  rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl border-2 border-blue-100 hover:border-blue-300">
+               
+
+                <CardContent className="pt-12 pb-8 px-6">
+                  <div className="relative">
+                    <div className="text-center space-y-4">
+                    <div className="w-16 h-16 mx-auto">
+                  <div className="w-full h-full rounded-full bg-gradient-to-br from-purple-400 to-pink-600 p-0.5 shadow-lg">
+                    <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
+                      <Calendar className="w-8 h-8 text-purple-600 transform group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+                  </div>
+                </div>
+                      <h3 className="font-bold text-xl text-gray-800 group-hover:text-purple-600 transition-colors duration-300">
+                        {item.title}
+                      </h3>
+                      <div className="bg-gradient-to-r from-pink-100 via-purple-50 to-pink-100 rounded-xl py-3 px-4 shadow-inner">
+                        <p className="text-blue-800 font-semibold tracking-wide text-lg">{item.date}</p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className="mt-20 text-center"
+        >
+          <Link
+            href="/schedule"
+            className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-purple-500 via-red-400  to-orange-400 rounded-full shadow-lg  transition-all duration-300 transform hover:-translate-y-1 hover:scale-105"
+          >
+            View Full Schedule
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 ml-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </Link>
+        </motion.div>
+      </div>
+    </div>
+  )
+}
+
