@@ -92,7 +92,7 @@ export function Footer() {
           {/* Heading */}
             <div className="inline-flex">
 
-          <Image src="/wcledr_logo.svg" width={150} height={50} alt="ICASEM" className=" " />
+          <Image src="/wcledr_Logo.svg" width={150} height={50} alt="ICASEM" className=" " />
           <div className="inline-flex justify-start items-center text-white text-2xl sm:text-3xl font-bold">
           <Image src="https://res.cloudinary.com/dwlhesiyi/image/upload/v1726731577/il2wr5yxd2w1sarnj3it.svg" width={100} height={40} alt="ICASEM" className=" " />
           <span className="-ml-3">Zep Research</span> 

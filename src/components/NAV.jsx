@@ -168,7 +168,7 @@ export default function Navbar() {
           <Link href="/" className="text-2xl font-bold inline-flex justify-center items-center  mt-2">
           
             <Image
-              src="/wcledr_logo.svg"
+              src="/wcledr_Logo.svg"
               alt="Conference Logo"
               className="drop-shadow-2xl  "
               width={120}
