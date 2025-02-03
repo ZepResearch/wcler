@@ -21,7 +21,7 @@ export default function ThemeAndTopics() {
   useEffect(() => {
     const fetchDates = async () => {
       try {
-        const pb = new PocketBase('https://icsthm.pockethost.io')
+        const pb = new PocketBase('https://wcler.pockethost.io')
         const records = await pb.collection('dates').getFullList({
           sort: '-created',
         
