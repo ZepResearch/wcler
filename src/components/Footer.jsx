@@ -92,10 +92,11 @@ export function Footer() {
           {/* Heading */}
             <div className="inline-flex">
 
-          <Image src="/wcledr_Logo.svg" width={150} height={50} alt="ICASEM" className=" " />
+          <Image src="/wcledr_Logo.svg" width={150} height={50} alt="wcler" className=" " />
           <div className="inline-flex justify-start items-center text-white text-2xl sm:text-3xl font-bold">
-          <Image src="https://res.cloudinary.com/dwlhesiyi/image/upload/v1726731577/il2wr5yxd2w1sarnj3it.svg" width={100} height={40} alt="ICASEM" className=" " />
-          <span className="-ml-3">Zep Research</span> 
+          <Image src="https://res.cloudinary.com/dwlhesiyi/image/upload/v1729260387/erph7fml9unxiowlmrmg.png" width={300} height={40} alt="zepresearch" className=" " />
+          {/* <Image src="https://res.cloudinary.com/dwlhesiyi/image/upload/v1726731577/il2wr5yxd2w1sarnj3it.svg" width={100} height={40} alt="ICASEM" className=" " />
+          <span className="-ml-3">Zep Research</span>  */}
           </div>
             </div>
           

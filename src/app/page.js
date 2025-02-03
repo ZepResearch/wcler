@@ -8,6 +8,9 @@ import HeroSection from "@/components/Hero";
 import SDGSection from "@/components/SDGS";
 import { FAQ } from "@/components/FAQ";
 import { Dates } from "@/components/Dates";
+import { Button } from "@/components/ui/button";
+import Buttons from "@/components/buttons";
+import SpeakerSection from "@/components/Speakers";
 
 
 export default function Home() {
@@ -16,7 +19,9 @@ export default function Home() {
     <HeroSection/>
     <CoOrganizationLogos/>
     <About/>
+    <Buttons/>
     <Feature/>
+    <SpeakerSection/>
     <SDGSection/>
     <Dates/>
     <CTA/>
