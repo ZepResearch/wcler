@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { CalendarIcon, MapPinIcon, UsersIcon, Ticket, FileText, Download, Info } from "lucide-react"
+import Link from "next/link"
 
 export default function HeroSection() {
   return (
@@ -59,18 +60,24 @@ export default function HeroSection() {
           />
         </div>
           <div className="flex flex-row mt-8  max-w-md gap-5">
+            <Link href={'/submission'}>
             <Button className="bg-gradient-to-r from-purple-500 via-red-400  to-orange-400 text-white hover:bg-white/90 text-lg px-8 py-6" size="lg">
               <FileText className="mr-2 h-6 w-6" />
               Submit your paper
             </Button>
+            </Link>
+            {/* <Link> */}
             <Button className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-lg px-8 py-6" size="lg">
               <Download className="mr-2 h-6 w-6" />
                Brochure
             </Button>
+            {/* </Link> */}
+            <Link href={'/about-conference'}>
             <Button className="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-lg px-8 py-6" size="lg">
               <Info className="mr-2 h-6 w-6" />
               About Conference
             </Button>
+            </Link>
           </div>
         </motion.div>
 
@@ -120,10 +127,12 @@ export default function HeroSection() {
                 </div>
 
                 {/* Register Button */}
-                <Button className="w-full text-lg py-6 bg-gradient-to-r from-purple-500 via-red-400  to-orange-400" size="lg">
+                <Link href={'/registration'}>
+                <Button className="w-full text-lg py-6 bg-gradient-to-r from-purple-500 via-red-400  to-orange-400 mt-2" size="lg">
                   <Ticket className="mr-2 h-6 w-6" />
                   Register for Wcler 2025
                 </Button>
+                </Link>
               </div>
             </CardContent>
           </Card>
