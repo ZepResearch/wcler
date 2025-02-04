@@ -300,7 +300,7 @@ export default function Navbar() {
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
-          <Button asChild variant='outline' className="w-full  border-blue-400 text-blue-400 hover:text-blue-600 font-medium">
+          <Button asChild variant='outline' className="w-full  border-orange-400 text-orange-400 hover:text-orange-600 bg-white font-medium">
               <Link href="/sponsorship">Exhibit & Sponsor</Link>
             </Button>
           <Button asChild className="">
