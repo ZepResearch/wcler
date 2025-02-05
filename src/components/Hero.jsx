@@ -4,12 +4,35 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import { CalendarIcon, MapPinIcon, UsersIcon, Ticket, FileText, Download, Info } from "lucide-react"
+import { CalendarIcon, MapPinIcon, UsersIcon, Ticket, FileText, Download, Info, MapPin, Headphones } from "lucide-react"
 import Link from "next/link"
 
 export default function HeroSection() {
   return (
     <div className="relative min-h-screen w-full overflow-hidden flex items-center justify-center">
+        <motion.div
+        className="md:absolute top-32 sm:right-48 right-5 z-20 bg-gradient-to-tl from-teal-300/80 to-cyan-600/90 backdrop-blur-sm text-white p-4 rounded-lg shadow-lg w-64 md:my-0 my-4 md:ml-0 ml-12"
+        initial={{ opacity: 0, x: 100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 1, duration: 0.5 }}
+      >
+        <h3 className="font-bold text-lg mb-2">Hybrid Conference</h3>
+        <p className="text-sm mb-2">Experience the conference your way:</p>
+        <ul className="list-disc list-inside text-sm">
+          <li>Attend in person in Malaysia</li>
+          <li>Join virtually from anywhere</li>
+        </ul>
+        <div className="mt-3 flex items-center justify-between text-xs">
+          <span className="flex items-center">
+            <MapPin className="w-4 h-4 mr-1" />
+            Physical
+          </span>
+          <span className="flex items-center">
+            <Headphones className="w-4 h-4 mr-1" />
+            Virtual
+          </span>
+        </div>
+      </motion.div>
       {/* Background Video */}
       <video
         autoPlay
