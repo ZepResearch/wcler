@@ -57,7 +57,6 @@ export default function HeroSection() {
             alt=""
             className="h-12 drop-shadow-lg"
           />
-
           <img
             src="https://res.cloudinary.com/dwlhesiyi/image/upload/v1729260387/erph7fml9unxiowlmrmg.png"
             alt=""
