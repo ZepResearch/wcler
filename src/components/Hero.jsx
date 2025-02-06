@@ -10,29 +10,7 @@ import Link from "next/link"
 export default function HeroSection() {
   return (
     <div className="relative min-h-screen w-full overflow-hidden flex items-center justify-center">
-        <motion.div
-        className="md:absolute top-32 sm:right-48 right-5 z-20 bg-gradient-to-tl from-teal-300/80 to-cyan-600/90 backdrop-blur-sm text-white p-4 rounded-lg shadow-lg w-64 md:my-0 my-4 md:ml-0 ml-12"
-        initial={{ opacity: 0, x: 100 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 1, duration: 0.5 }}
-      >
-        <h3 className="font-bold text-lg mb-2">Hybrid Conference</h3>
-        <p className="text-sm mb-2">Experience the conference your way:</p>
-        <ul className="list-disc list-inside text-sm">
-          <li>Attend in person in Malaysia</li>
-          <li>Join virtually from anywhere</li>
-        </ul>
-        <div className="mt-3 flex items-center justify-between text-xs">
-          <span className="flex items-center">
-            <MapPin className="w-4 h-4 mr-1" />
-            Physical
-          </span>
-          <span className="flex items-center">
-            <Headphones className="w-4 h-4 mr-1" />
-            Virtual
-          </span>
-        </div>
-      </motion.div>
+      
       {/* Background Video */}
       <video
         autoPlay
@@ -60,10 +38,14 @@ export default function HeroSection() {
           transition={{ duration: 0.8 }}
           className="flex flex-col justify-center text-white"
         >
-          <h1 className="mb-1 text-7xl font-semibold text-pretty">World Conference on Learning and Education Research</h1>
+          <h1 className="mb-1 text-7xl font-semibold text-pretty ">World Conference on Learning and Education Research</h1>
           <p className="mb-4 ml-2 max-w-2xl text-xl text-white/90 leading-relaxed">
           Advancing Global Knowledge in Learning and Education Research
           </p>
+          <div className="my-3   gap-3 px-4 max-w-2xl  backdrop-blur-sm bg-slate-50/20 py-4 rounded-3xl">
+          <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-500 via-red-400  to-orange-400  text-transparent bg-clip-text ">Hybrid conference</h1>
+          <p className="font-medium text-xl">Take your time at the Conference. Attend in person in Philippines <br /> or Participate virtually from any location.</p>
+        </div>
           <div className="flex sm:flex-row flex-col-reverse  items-start sm:items-center justify-center gap-3 px-4 max-w-2xl  backdrop-blur-sm bg-gray-50/30 py-4 rounded-3xl">
           <img
             src="https://res.cloudinary.com/dwlhesiyi/image/upload/v1728043047/yqhbu4xrrwcab48qtpfw.png"

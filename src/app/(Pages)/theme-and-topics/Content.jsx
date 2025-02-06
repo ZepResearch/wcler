@@ -183,11 +183,10 @@ export default function ThemeAndTopics() {
             </CardHeader>
             <CardContent className="p-6">
               <p className="leading-relaxed text-lg text-muted-foreground">
-                We bring together experts who want to make Learning and Education Research better. Share your ideas with researchers, industry leaders, and policymakers. Learn about what works in sustainable Learning and Education Research.
-              </p>
-              <p className="leading-relaxed text-lg text-muted-foreground mt-4">
+              The World Conference on Learning and Education Research (WCLER) is more than just an academic event—it’s a place where passionate educators, researchers, and policymakers come together to rethink the future of learning. We’ll explore what’s working, what’s not, and how we can make education research more impactful and sustainable. From innovative teaching methods to the latest in educational technology, WCLER 2025 is all about sharing ideas that can truly make a difference. Join us in Jakarta, Indonesia, to connect, collaborate, and help shape the future of education.              </p>
+              {/* <p className="leading-relaxed text-lg text-muted-foreground mt-4">
                 All submissions are carefully reviewed to ensure they bring new and valuable insights to the field.
-              </p>
+              </p> */}
             </CardContent>
           </Card>
         </motion.div>
@@ -266,7 +265,7 @@ export default function ThemeAndTopics() {
                       {getIconForEventType(item.eventType)}
                     </div> */}
                     <span className="text-lg text-muted-foreground">
-                      <strong>{item.date}:</strong> {item.name}
+                      <strong>{item.date}:</strong> {item.title}
                     </span>
                   </li>
                 ))}
