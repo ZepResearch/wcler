@@ -162,7 +162,7 @@ const MobileNav = () => (
 
 export default function Navbar() {
   return (
-    <div className="border-b border-primaray dark:border-primaray  py-2  z-50 fixed left-0 right-0 top-0 bg-white">
+    <div className="border-b border-primaray dark:border-primaray  py-2  z-50 fixed left-0 right-0 top-0 bg-black/50 backdrop-blur-lg pb-4">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 ">
         <div className="flex items-center justify-center ">
           <Link href="/" className="text-2xl font-bold inline-flex justify-center items-center  mt-2">
@@ -174,7 +174,7 @@ export default function Navbar() {
               width={120}
               height={120}
             />
-            <span>WCLER</span>
+            {/* <span>WCLER</span> */}
           </Link>
         </div>
         <div className="hidden md:flex items-center space-x-4 relative z-20 ">
@@ -221,7 +221,8 @@ export default function Navbar() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>
+              {/* className=" bg-transparent text-white" */}
+                <NavigationMenuTrigger >
                   <FileText className="mr-2 h-4 w-4 inline" />
                   PROGRAM
                 </NavigationMenuTrigger>
@@ -300,10 +301,10 @@ export default function Navbar() {
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
-          <Button asChild variant='outline' className="w-full  border-orange-400 text-orange-400 hover:text-orange-600 bg-white font-medium">
+          <Button asChild variant='outline' className="w-full  border-purple-700 text-purple-400 hover:text-purple-600 bg-white font-medium">
               <Link href="/sponsorship">Exhibit & Sponsor</Link>
             </Button>
-          <Button asChild className="">
+          <Button asChild className="bg-gradient-to-r from-purple-500 via-red-400  to-orange-400 ">
             <Link href="/registration">REGISTER NOW</Link>
           </Button>
         </div>
