@@ -63,7 +63,8 @@ export default function SubmitForm() {
   const { showSuccessToast, showErrorToast } = useCustomToast();
   const [formErrors, setFormErrors] = useState({
     presentationType: '',
-    conferenceSource: ''
+    conferenceSource: '',
+    pdfFile: ''
   });
   const [formData, setFormData] = useState({
     authorName: "",
@@ -92,6 +93,8 @@ export default function SubmitForm() {
   };
   const onDrop = (acceptedFiles) => {
     setPdfFile(acceptedFiles[0]);
+    // Clear error when file is uploaded
+    setFormErrors(prev => ({...prev, pdfFile: ''}));
   };
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
@@ -125,7 +128,8 @@ export default function SubmitForm() {
   const validateForm = () => {
     const errors = {
       presentationType: !formData.presentationType ? 'Please select a presentation type' : '',
-      conferenceSource: !formData.conferenceSource ? 'Please select how you learned about the conference' : ''
+      conferenceSource: !formData.conferenceSource ? 'Please select how you learned about the conference' : '',
+      pdfFile: !pdfFile ? 'Please upload your paper' : ''
     };
     
     setFormErrors(errors);
@@ -254,13 +258,6 @@ export default function SubmitForm() {
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="number">Phone / Whatsapp.no</Label>
-                    {/* <Input
-                      id="number"
-                      name="number"
-                      value={formData.number}
-                      onChange={handleChange}
-                      required
-                    /> */}
                     <PhoneInput 
                      id="number"
                       name="number"
@@ -334,12 +331,12 @@ export default function SubmitForm() {
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <Label>Upload your paper</Label>
+                  <Label>Upload your paper <span className="text-red-500">*</span></Label>
                   <div
                     {...getRootProps()}
-                    className="border-2 border-dashed border-gray-300 rounded-md p-4 text-center cursor-pointer"
+                    className={`border-2 border-dashed ${!pdfFile && formErrors.pdfFile ? 'border-red-500' : 'border-gray-300'} rounded-md p-4 text-center cursor-pointer`}
                   >
-                    <input {...getInputProps()} required/>
+                    <input {...getInputProps()} />
                     {isDragActive ? (
                       <p>Drop the PDF file here ...</p>
                     ) : (
@@ -356,6 +353,9 @@ export default function SubmitForm() {
                         {pdfFile.name}
                       </span>
                     </p>
+                  )}
+                  {!pdfFile && formErrors.pdfFile && (
+                    <p className="text-sm text-red-500">{formErrors.pdfFile}</p>
                   )}
                 </div>
                 <div className="space-y-2">
@@ -379,18 +379,18 @@ export default function SubmitForm() {
                   </RadioGroup>
                 </div>
                 <SelectField
-        label="Presentation Type"
-        name="presentationType"
-        value={formData.presentationType}
-        onValueChange={(value) =>
-          setFormData((prev) => ({
-            ...prev,
-            presentationType: value,
-          }))
-        }
-        options={presentationTypeOptions}
-        error={formErrors.presentationType}
-      />
+                  label="Presentation Type"
+                  name="presentationType"
+                  value={formData.presentationType}
+                  onValueChange={(value) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      presentationType: value,
+                    }))
+                  }
+                  options={presentationTypeOptions}
+                  error={formErrors.presentationType}
+                />
                 <div className="space-y-2">
                   <Label htmlFor="message">Message</Label>
                   <Textarea
@@ -403,18 +403,18 @@ export default function SubmitForm() {
                   />
                 </div>
                 <SelectField
-        label="How this conference came to be known to you"
-        name="conferenceSource"
-        value={formData.conferenceSource}
-        onValueChange={(value) =>
-          setFormData((prev) => ({
-            ...prev,
-            conferenceSource: value,
-          }))
-        }
-        options={conferenceSourceOptions}
-        error={formErrors.conferenceSource}
-      />
+                  label="How this conference came to be known to you"
+                  name="conferenceSource"
+                  value={formData.conferenceSource}
+                  onValueChange={(value) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      conferenceSource: value,
+                    }))
+                  }
+                  options={conferenceSourceOptions}
+                  error={formErrors.conferenceSource}
+                />
                 <Button type="submit" className="w-full">
                   Submit Paper
                 </Button>

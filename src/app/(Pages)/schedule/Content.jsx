@@ -10,7 +10,7 @@ import { addDays } from "date-fns"
 
 const scheduleData = [
   {
-    date: "October - 23 | Registration",
+    date: "October - 17th | Registration",
     items: [
       { time: "8:00AM - 9:15AM", title: "Registration" },
       { time: "9:15AM - 9:30AM", title: "Inaugural Function" },
@@ -38,7 +38,7 @@ const scheduleData = [
   //   ]
   // },
   {
-    date: "October - 25 | Closing Day",
+    date: "October - 18th | Closing Day",
     items: [
       { time: "9:00AM - 9:30AM", title: "Registration" },
       { time: "9:30AM - 10:00AM", title: "Closing Ceremony Opening Remarks" },
@@ -54,7 +54,7 @@ const scheduleData = [
 ]
 
 export default function ConferenceSchedule() {
-  const startDate = new Date(2025, 9, 24) // March 21, 2024
+  const startDate = new Date(2025, 9, 17) // March 21, 2024
   const [selectedDates, setSelectedDates] = useState([
     startDate,
     addDays(startDate, 1),
@@ -69,7 +69,7 @@ export default function ConferenceSchedule() {
             Shaping Tomorrow&apos;s Learning & Educational Landscape
           </h1>
           <p className="text-muted-foreground">
-            Join us October 24th-25th for three days of cutting-edge insights and networking. Reserve your spot today!
+            Join us October 17th-18th for three days of cutting-edge insights and networking. Reserve your spot today!
           </p>
         </div>
 

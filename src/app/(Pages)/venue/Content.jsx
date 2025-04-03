@@ -47,7 +47,7 @@ export default function VenuePage() {
               <span className="font-bold"><MapPin/></span> Jakarta International Convention Center, Jalan Gatot Subroto, Jakarta, Indonesia
             </div>
             <div className="mt-4 text-gray-700 dark:text-gray-300 text-lg inline-flex gap-2">
-              <span className="font-bold"><Calendar/></span> October 2025
+              <span className="font-bold"><Calendar/></span> 17th & 18th October 2025
             </div>
           </div>
         </div>

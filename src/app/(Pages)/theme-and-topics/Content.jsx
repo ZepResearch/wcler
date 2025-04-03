@@ -258,7 +258,7 @@ export default function ThemeAndTopics() {
             {loading ? (
               <p className="text-lg text-muted-foreground">Loading dates...</p>
             ) : (
-              <ul className=" flex flex-col-reverse">
+              <ul className=" flex flex-col">
                 {dates.map((item, index) => (
                   <li key={index} className="flex items-center py-2">
                     {/* <div className="mr-2 text-primary">

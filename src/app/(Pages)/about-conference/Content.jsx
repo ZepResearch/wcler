@@ -283,7 +283,7 @@ export default function ConferenceAboutSection() {
                 Join us in shaping the future of education and learning.
               </CardDescription>
               <p className="text-muted-foreground">
-                October 15th - 16th, 2025 • Jakarta, Indonesia
+                October 17th - 18th, 2025 • Jakarta, Indonesia
               </p>
             </CardContent>
           </Card>

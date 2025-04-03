@@ -112,7 +112,7 @@ export default function HeroSection() {
                     <label className="text-base text-muted-foreground mb-2 block">Date</label>
                     <div className="relative ">
                       <CalendarIcon className="absolute left-4 top-4 h-6 w-6 text-gray-400" />
-                      <Input value="18th - 19th Oct, 2025" readOnly className="pl-12 bg-gray-50 text-lg py-6 font-mono" />
+                      <Input value="17th - 18th Oct, 2025" readOnly className="pl-12 bg-gray-50 text-lg py-6 font-mono" />
                     </div>
                   </div>
                   <div className="w-2/3">

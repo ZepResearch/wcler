@@ -123,7 +123,7 @@ export default function AboutCompany() {
                 Join us in shaping the future of Learning and Education Research
               </CardDescription>
               <h2 className="text-muted-foreground">
-                October 24th - 25th, 2025 • Jakarta, Indonesia
+                October 17th - 18th, 2025 • Jakarta, Indonesia
               </h2>
             </CardContent>
           </Card>
