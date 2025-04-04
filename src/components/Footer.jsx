@@ -244,7 +244,7 @@ export function Footer() {
           variants={item}
           className="mt-4 pt-2 border-t border-white/60 text-center text-base text-white/90"
         >
-          © 2025 ICASEM. All rights reserved.
+          © 2025 WCLER. All rights reserved.
         </motion.div>
       </div>
     </footer>
